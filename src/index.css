@@ -119,7 +119,8 @@ img {
 }
 
 .dot:active {
-  outline: 3px solid #bbb;
+  outline: 1px solid #bbb;
+  outline-radius: 50%;
   cursor: pointer;
 }
 
@@ -208,7 +209,7 @@ a:after {
 
   .product-wrapper {
     position: relative;
-    top: -23vh;
+    top: -24vh;
     margin-left: 27px;
   }
 
@@ -217,7 +218,7 @@ a:after {
   }
 
   .products {
-    margin-top: 40px;
+    margin-top: 48px;
   }
 
   .product-price_color {
