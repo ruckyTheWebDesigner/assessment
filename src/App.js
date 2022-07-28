@@ -1,10 +1,17 @@
 import productImage from "./assets/product-image.png";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
+import { GrNext } from "react-icons/gr";
 
 import MockData from "./data/MockData";
 
 function App() {
   const [productData, setProductData] = useState(MockData);
+
+  const ref = useRef();
+
+  const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset;
+  };
 
   return (
     <>
@@ -25,7 +32,10 @@ function App() {
               <a href='/#'>Shop All Everyday Items</a>
             </div>
 
-            <div className='products'>
+            <div className='products' ref={ref}>
+              <button className='scroll-btn' onClick={() => scroll(20)}>
+                <GrNext />
+              </button>
               {productData.map((product) => {
                 return (
                   <div className='product-card' key={product.id}>

@@ -38,6 +38,10 @@ p {
   line-height: 24px;
 }
 
+img {
+  max-width: none;
+}
+
 .section-wrapper {
   display: flex;
   flex-direction: row;
@@ -53,6 +57,16 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.product-title p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.product_description p {
+  margin-top: 12px;
+  margin-bottom: 10px;
 }
 
 .product-img {
@@ -71,7 +85,7 @@ p {
 }
 
 .product-card {
-  margin-right: 20px;
+  margin-right: 25px;
 }
 
 .product-card:hover {
@@ -123,8 +137,12 @@ a:after {
   border-bottom: 2px solid #d2d7da;
   width: 100%;
   transform: translateX(-50%);
-  margin-top: 20px;
+  margin-top: 25px;
   left: 50%;
+}
+
+.scroll-btn {
+  display: none;
 }
 
 @media only screen and (max-width: 992px) {
@@ -184,13 +202,13 @@ a:after {
   }
 
   .product-card img {
-    width: 160px;
-    height: 220px;
+    width: 165px;
+    height: 230px;
   }
 
   .product-wrapper {
     position: relative;
-    top: -24vh;
+    top: -23vh;
     margin-left: 27px;
   }
 
@@ -208,6 +226,7 @@ a:after {
 
   .swatches {
     margin-top: 10px;
+    margin-bottom: 30px;
   }
 
   .product-title p {
@@ -216,5 +235,22 @@ a:after {
 
   .product-title {
     padding-right: 5em;
+  }
+
+  .scroll-btn {
+    position: absolute;
+    bottom: 230px;
+    right: 12px;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #d2d7da;
   }
 }
