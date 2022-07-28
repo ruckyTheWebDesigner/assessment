@@ -1,13 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir"), url(./fonts/AvenirLTStd-Black.otf) format("truetype");
+}
+@font-face {
+  font-family: "AvenirBook";
+  src: local("AvenirBook"), url(./fonts/AvenirLTStd-Book.otf) format("truetype");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-family: "Avenir", sans-serif;
+  font-style: normal;
+  font-size: 31.25px;
+  line-height: 40.62px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  font-family: "AvenirBook", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-wrapper {
+  margin-top: 80px;
+  margin-left: 100px;
+}
+
+.product-price_color {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: scroll;
+  margin-top: 70px;
+}
+
+.product-card {
+  margin-right: 20px;
+}
+
+.product-card:hover {
+  cursor: pointer;
+}
+
+.products img {
+  border-radius: 2px;
+}
+
+.products::-webkit-scrollbar {
+  display: none;
+}
+
+.swatches {
+  display: flex;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.dot:hover {
+  outline: 3px solid #000;
+  cursor: pointer;
+}
+
+.dot:active {
+  outline: 3px solid #bbb;
+  cursor: pointer;
+}
+
+a {
+  font-family: "Avenir", sans-serif;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  position: relative;
+}
+
+a:after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #d2d7da;
+  width: 100%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  left: 50%;
+}
+
+@media only screen and (max-width: 992px) {
+  .section-wrapper {
+    flex-direction: column;
+  }
+
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+  }
+
+  .product-wrapper {
+    position: relative;
+    top: -37vh;
+    margin-left: 50px;
+    margin-top: 0px;
+  }
+
+  .product-title {
+    color: white;
+    padding-right: 15em;
+    z-index: 4;
+  }
+
+  .product-title h1 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .section-wrapper {
+    flex-direction: row;
+  }
+
+  .product-title {
+    padding-right: 10em;
+  }
+
+  .products img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-wrapper {
+    flex-direction: column;
+  }
+
+  .product-card {
+    margin-right: 15px;
+  }
+
+  .product-card img {
+    width: 160px;
+    height: 220px;
+  }
+
+  .product-wrapper {
+    position: relative;
+    top: -24vh;
+    margin-left: 27px;
+  }
+
+  .product-title {
+    color: white;
+  }
+
+  .products {
+    margin-top: 40px;
+  }
+
+  .product-price_color {
+    display: block;
+  }
+
+  .swatches {
+    margin-top: 10px;
+  }
+
+  .product-title p {
+    display: none;
+  }
+
+  .product-title {
+    padding-right: 5em;
+  }
 }
